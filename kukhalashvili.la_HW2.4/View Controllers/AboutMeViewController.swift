@@ -13,6 +13,12 @@ class AboutMeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //userName.title = "\(currentUser.name) \(currentUser.surname)"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let aboutMeVC = tabBarController?.viewControllers?.first as! HelloViewController
+        userName.title = "\(aboutMeVC.name) \(aboutMeVC.surname)"
+        
     }
 }

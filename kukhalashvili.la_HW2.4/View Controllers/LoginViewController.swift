@@ -21,37 +21,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        for user in users {
-            if userTF.text == user.login && passwordTF.text == user.userPassword {
-                performSegue(withIdentifier: "hellowSegue", sender: nil)
-                currentUser = user
-            }
-        }
-        if currentUser.login == "" {
-            let alert = UIAlertController(
-                title: "Oops🤪",
-                message: "Пользователь не найден",
-                preferredStyle: .alert
-            )
-            
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-        }
+        logIn()
     }
     
     
     @IBAction func unwindSegueToLoginVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "loginSegue" else { return }
         guard segue.source is HelloViewController else { return }
-        passwordTF.text = ""
         logOut()
     }
     
     @IBAction func forgotUserName(_ sender: UIButton) {
         let alert = UIAlertController(
             title: "Oops🤪",
-            message: "Your name: \(currentUser.login)",
+            message: "user name: \("levan")",
             preferredStyle: .alert
         )
         
@@ -63,7 +46,7 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPassword(_ sender: UIButton) {
         let alert = UIAlertController(
             title: "Oops🤪",
-            message: "Your password: \(currentUser.userPassword)",
+            message: "Your password: \("12345")",
             preferredStyle: .alert
         )
         
@@ -77,12 +60,11 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(currentUser)
         let tabBarController = segue.destination as! UITabBarController
-        let destinationVC = tabBarController.viewControllers?.first as!
+        let helloVC = tabBarController.viewControllers?.first as!
             HelloViewController
-        destinationVC.name = currentUser.name
-        
+        helloVC.name = currentUser.name
+        helloVC.surname = currentUser.surname
     }
     
     private func configureTextFields() {
@@ -90,7 +72,29 @@ class LoginViewController: UIViewController {
         passwordTF.delegate = self
     }
     
+    private func logIn() {
+        for user in users {
+            if userTF.text == user.login && passwordTF.text == user.userPassword {
+                currentUser = user
+                performSegue(withIdentifier: "hellowSegue", sender: nil)
+
+            }
+        }
+        if currentUser.login == "" {
+            let alert = UIAlertController(
+                title: "Oops🤪",
+                message: "Пользователь не найден",
+                preferredStyle: .alert
+            )
+
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
     private func logOut() {
+        passwordTF.text = ""
         currentUser = User(login: "", name: "", surname: "", userPassword: "")
     }
 }
@@ -101,7 +105,10 @@ extension LoginViewController: UITextFieldDelegate {
         if textField == userTF {
             passwordTF.becomeFirstResponder()
         }
+        if textField == passwordTF {
+            logIn()
+        }
         return true
+        
     }
-    
 }

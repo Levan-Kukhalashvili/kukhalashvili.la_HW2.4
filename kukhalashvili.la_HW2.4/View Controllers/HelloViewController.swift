@@ -16,12 +16,14 @@ class HelloViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLable.text = name
-        print(name)
+        welcomeLable.text = "Welcom, \(surname) \(name)!"
 
     }
 
     @IBAction func goLoginTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "loginSegue", sender: nil)
+        dismiss(animated: true, completion: nil)
     }
+    
+
 }

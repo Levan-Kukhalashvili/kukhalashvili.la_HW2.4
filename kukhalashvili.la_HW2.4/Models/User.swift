@@ -14,8 +14,8 @@ struct User {
 }
 
 let users = [User(login: "levan",name: "Леван",surname: "Кухалашвили",userPassword: "12345"),
-             User(login: "alex",name: "Alex",surname: "Alex",userPassword: "12345"),
-             User(login: "user",name: "User",surname: "User",userPassword: "12345")]
+             User(login: "alex",name: "Alex",surname: "Malkovich",userPassword: "12345"),
+             User(login: "artur",name: "Артур",surname: "Пирожков",userPassword: "12345")]
 
 
 
