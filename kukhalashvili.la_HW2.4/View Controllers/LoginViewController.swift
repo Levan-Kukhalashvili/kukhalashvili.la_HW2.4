@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var userTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    var currentUser = User(login: "", name: "", surname: "", userPassword: "")
+    var currentUser = User(login: "", name: "", surname: "", userPassword: "", descriptionUser: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +65,8 @@ class LoginViewController: UIViewController {
             HelloViewController
         helloVC.name = currentUser.name
         helloVC.surname = currentUser.surname
+        helloVC.descriptionUser = currentUser.descriptionUser
+        
     }
     
     private func configureTextFields() {
@@ -95,7 +97,7 @@ class LoginViewController: UIViewController {
     
     private func logOut() {
         passwordTF.text = ""
-        currentUser = User(login: "", name: "", surname: "", userPassword: "")
+        currentUser = User(login: "", name: "", surname: "", userPassword: "", descriptionUser: "")
     }
 }
 

@@ -11,11 +11,9 @@ class ThanksViewController: UIViewController {
     @IBOutlet var thanksUserName: UINavigationItem!
     
     var surname = ""
-    var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //thanksUserName.title = "\(currentUser.name) \(currentUser.surname)"
         
     }
     override func viewWillAppear(_ animated: Bool) {
