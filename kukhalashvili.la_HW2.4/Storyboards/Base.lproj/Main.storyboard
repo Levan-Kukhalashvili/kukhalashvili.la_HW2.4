@@ -119,24 +119,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ihi-1X-P4l">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihi-1X-P4l">
                                                 <rect key="frame" x="8" y="40" width="304" height="359"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ihi-1X-P4l" secondAttribute="height" multiplier="304:359" id="Gnp-JW-0Gu"/>
                                                 </constraints>
-                                                <mutableString key="text">Меня зовут Кухалашвили Леван, мне 37 лет.  
-В 2005 году Закончил Тверской Государственный университет. Специальность  "Геолог"
-Потом служба в армии и кое какая работа в общем не чего интерестного.
-С 2010 по 2014 работал в компании "Петровайзер" компания по направлению сервис для буровых нефтедобывающих и газовых компаний.  А также разработка ПО для этих компаний. работал на должности специалиста по внедрению (внедрял, сопровождал, тестировал ПО) 
-C 2014 проживаю в городе герое Санкт-Петербурге. Работаю в компании Газпромнефть – Цифровые решения. Должность ТимЛид (менеджер продукта).
-У меня в команде два бэкенд разработчика, один фронтент, базист, дизайнер и я. Занимаемся разработкой своего собственного продукта по мониторингу инфраструктуры их логических компонентов.
-В прошлом году выдали новенький макбук про , заинтересовался разработкой на swift.
-Так как у нас компании очень безлопастные безопасники, то мобильная разработка у нас не практикуется (точнее она есть, но ее очень мало), поэтому это просто мое хобби, так как и катание на сноуборде.
-Прошел основы языка на гигбрейнсе, не понравилось, потом наткнулся на курсы на swiftbook.ru, купил подписку и понял что хочу учится у тебя.
-</mutableString>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -172,6 +162,7 @@ C 2014 проживаю в городе герое Санкт-Петербург
                     </view>
                     <navigationItem key="navigationItem" title="Name" id="1Gc-Un-Svx"/>
                     <connections>
+                        <outlet property="aboutMeText" destination="Ihi-1X-P4l" id="9GX-Dt-AOi"/>
                         <outlet property="userName" destination="1Gc-Un-Svx" id="00j-7q-uzF"/>
                     </connections>
                 </viewController>

@@ -13,6 +13,7 @@ class HelloViewController: UIViewController {
 
     var surname = ""
     var name = ""
+    var descriptionUser = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,6 +10,7 @@ import UIKit
 class AboutMeViewController: UIViewController {
 
     @IBOutlet var userName: UINavigationItem!
+    @IBOutlet var aboutMeText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class AboutMeViewController: UIViewController {
         super.viewWillAppear(animated)
         let aboutMeVC = tabBarController?.viewControllers?.first as! HelloViewController
         userName.title = "\(aboutMeVC.name) \(aboutMeVC.surname)"
+        aboutMeText.text = aboutMeVC.descriptionUser
         
     }
 }
